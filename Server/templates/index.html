@@ -1,0 +1,21 @@
+{{ define "index" }}
+
+    {{ template "header" }}
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading"><img src="../src/amazing_logo.png" alt="logo" width="200"></h1>
+        <p class="lead">Мой блог</p>
+        {{ range .Posts }}
+            <div class="alert alert-dark">
+                <h2>{{ .Title }}</h2>
+                <p>{{ .Anons }}</p>
+                <a href="/post/{{ .Id }}" class="btn btn-dark">Открыть статью</a>
+            </div>
+        {{ else }}
+            <p class="lead">Статей пока нет!</p>
+        {{ end }}
+        {{ range .Pg}}
+            <a href="?page={{ . }}" class="btn btn-dark">{{ . }}</a>
+        {{ end }}
+    </main>
+    {{ template "footer" }}
+{{ end }}

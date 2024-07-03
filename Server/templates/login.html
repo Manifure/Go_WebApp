@@ -1,0 +1,20 @@
+{{ define "login" }}
+
+    {{ template "header" }}
+    <main role="main" class="inner cover">
+        <h1 class="cover-headig">Авторизация</h1>
+
+        <form action="/check_login" method="post">
+            <div>
+                <textarea name="login" id="login" class="form-control" placeholder="Логин"></textarea><br>
+            </div>
+            <div>
+                <textarea name="pas" id="pas" class="form-control" placeholder="Пароль"></textarea><br>
+            </div>
+            <button class="btn btn-secondary">Войти</button>
+            <a href="/"> <button class="btn btn-secondary" type="button">Назад</button></a>
+        </form>
+    </main>
+    {{ template "footer" }}
+
+{{ end }}
